@@ -1,0 +1,145 @@
+.body{
+
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px
+
+}
+
+.top{
+    background-color: lightyellow;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.bottom{  background-color: lightyellow;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;}
+
+
+.pic_box{
+    background-color: lightsalmon;
+
+    width: 300px;
+    height: 200px;
+    border: 2px solid #333333;
+    padding: 15px;
+    margin: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .profile_pic{
+        border-radius: 50%;
+        height: 180px;
+
+    }
+
+}
+.info_box{
+    background-color: lightgreen;
+
+    width: 300px;
+    height: 200px;
+    border: 2px solid #333333;
+    padding: 5px;
+    margin: 15px;
+    box-sizing: border-box;
+
+    .heading{
+        text-align: center;
+    }
+
+    .info_body{
+        background-color: lightpink;
+        width: auto;
+        height: 120px;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        line-height: 1px;
+        text-align: center;
+    }
+}
+.getDone_box{
+    background-color: lightslategray;
+
+    width: 600px;
+    height: auto;
+    border: 2px solid #333333;
+    padding: 5px;
+    margin: 15px;
+    box-sizing: border-box;
+    .heading{
+        text-align: center;
+    }
+
+    .goal_info{
+        background: beige;
+        width: auto;
+        height: auto;
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        line-height: 25px;
+        padding: 4px;
+        margin: 2px;
+    }
+}
+.vidoe_box{
+    background-color: lightpink;
+
+    width: auto;
+    height: auto;
+    border: 2px solid #333333;
+    padding: 5px;
+    margin: 15px;
+    box-sizing: border-box;
+    .video_button{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cam_pic{
+
+        border-radius: 50%;
+        width: 150px;
+        padding: 10px;
+    }
+}
+.trainingLog_box{
+    background-color: cyan;
+    width: auto;
+    height: auto;
+    border: 2px solid #333333;
+    padding: 5px;
+    margin: 15px;
+    box-sizing: border-box;
+    .TrainingLog_button{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cam_pic{
+
+        border-radius: 50%;
+        width: 150px;
+        padding: 10px;
+    }
+}
