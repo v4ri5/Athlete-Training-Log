@@ -10,6 +10,9 @@ Each field should be required
 -->
 <head>
     <link rel="stylesheet" href="/CSSCode/FormStyleCSS.css">
+    
+</head>
+<body>
     <form id="AthleteForm">
         
         <label for="athleteEvent">Event:</label>
@@ -17,11 +20,11 @@ Each field should be required
         
         
         <label for="Description">Description:</label>
-        <input type="textarea" id="Description" name="Description" required>
+        <textarea id="Description" name="Description" required></textarea>
 
         
         <label for="keyTakeaways">Key Takeaways:</label>
-        <input type="textarea" id="keyTakeaways" name="keyTakeaways" required>
+        <textarea id="keyTakeaways" name="keyTakeaways" required></textarea>
 
         
         <label for="feel">Feel Good?(y/n):</label>
@@ -51,4 +54,5 @@ Each field should be required
         
         <input type="submit" value="Submit">
     </form>
-</head>
+    <script src="/JavaScript Code/AthleteForm.js"></script>
+</body>
