@@ -1,198 +1,150 @@
-.body{
-    background-color: lightblue;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.subBody{
-    background-color: lightgrey;
-    justify-content: center;
-    align-items: center;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
-    padding: 20px;
-
 }
 
-.top{
-    background-color: lightyellow;
-    justify-content: center;
-    align-items: center;
+.top {
     display: flex;
-    flex-direction: row;
-    border: 2px solid #333333;
-    width: 650px;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-
-
-
-.pic_box{
-    background-color: lightsalmon;
-
-    width: 300px;
-    height: 200px;
-    border: 2px solid #333333;
-    padding: 15px;
-    margin: 15px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.pic_box {
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #333;
 }
-    .profile_pic{
-        border-radius: 50%;
-        height: 180px;
 
-    }
-
-
-.info_box {
-    background-color: lightgreen;
-
-    width: 300px;
-    height: auto;
-    border: 2px solid #333333;
-    padding: 5px;
-    margin: 15px;
-    box-sizing: border-box;
+.pic_box .profile_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-    .info_body{
-        background-color: lightpink;
-        width: auto;
-        height: 120px;
-
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        line-height: 1.4;
-        text-align: center;
-    }
 
 .getDone_box {
-    background-color: lightslategray;
-
-    width: 600px;
-    height: auto;
-    border: 2px solid #333333;
-    padding: 5px;
-    margin: 15px;
-    box-sizing: border-box;
+    flex: 1;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
 }
-    .heading{
-        text-align: center;
-    }
 
-    .goal_info{
-        background: beige;
-        width: auto;
-        height: auto;
+.getDone_box .heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
 
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        line-height: 25px;
-        padding: 4px;
-        margin: 2px;
-        border: 2px solid #333333;
+.goal_info p {
+    font-size: 0.875rem;
+    color: #555;
+    line-height: 1.6;
+}
 
-    }
-
-.bottom{
-    background-color: lightslategray;
-    height: auto;
-    width: 650px;
+.bottom {
     display: flex;
-    flex-direction: row;
-    border: 2px solid #333333;
-
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+    align-items: flex-start;
 }
-.video_box {
-    background-color: lightpink;
-    width: auto;
-    height: auto;
-    border: 2px solid #333333;
-    padding: 5px;
-    margin: 5px;
-    box-sizing: border-box;
-    border-radius: 50px;
 
+.info_box {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    min-width: 180px;
 }
-    .video_button{
-        width: auto;
-        height: auto;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .cam_pic{
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-    }
 
-    .Spacer{
-      flex: 1;
-    }
-.trainingLog_box {
-    background-color: cyan;
-    width: auto;
-    height: auto;
-    border: 2px solid #333333;
-    padding: 5px;
-    margin: 5px;
-    margin-left: 25px;
-    box-sizing: border-box;
-    border-radius: 50px;
+.info_box .heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    text-align: center;
 }
-    .TrainingLog_button{
-        width: auto;
-        height: auto;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .notebook_pic{
+
+.info_body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 1rem;
+}
+
+.info_body p {
+    font-size: 0.85rem;
+    color: #444;
+    text-align: center;
+}
+
+.vidoe_box, .trainingLog_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.video_button, .TrainingLog_button {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    }
+    border: 2px solid #333;
+    background: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
 
-.AthleteForm {
-        position: fixed;
-        top: 0;
-        left: 0;
+.video_button:hover, .TrainingLog_button:hover {
+    background: #f0f0f0;
+}
 
-        width: 100vw;
-        height: 100vh;
+.cam_pic {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
-        background: rgba(0, 0, 0, 0.7);
+.btn-label {
+    font-size: 0.75rem;
+    color: #555;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.feedback {
+    padding: 0.5rem 2rem 1rem;
+    font-size: 0.8rem;
+    color: #999;
+}
 
-        z-index: 1000;
-    }
-
-    .AthletePopUpForm {
-        width: 90%;
-        max-width: 900px;
-        height: 90%;
-        max-height: 800px;
-    }
-
-    .CloseBut {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        text-align: center;
-    }
-
-    .Iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-
+@media (max-width: 600px) {
+    .top { flex-direction: column; align-items: center; }
+    .bottom { flex-direction: column; }
+}
