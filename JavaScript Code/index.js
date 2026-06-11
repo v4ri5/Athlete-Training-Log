@@ -20,6 +20,7 @@ function openHistory() {
     allEntries.reverse();
     document.getElementById('entryCount').textContent = allEntries.length + ' Entries';
     updateFlameColor(allEntries.length);
+    updateStats();
     renderEntries(allEntries);
     popup.style.display = 'flex'
 }
@@ -79,7 +80,37 @@ function renderEntries(entries) {
     }
 }
 
+function updateStats() {
+    // Sleep average
+    const sleepEntries = allEntries.filter(e => e.sleep);
+    const avgSleep = sleepEntries.length
+        ? (sleepEntries.reduce((sum, e) => sum + parseFloat(e.sleep), 0) / sleepEntries.length).toFixed(1)
+        : 0;
 
+    // Streak — count consecutive days from today backwards
+    const dates = allEntries
+        .map(e => new Date(e.date).toDateString())
+        .filter((d, i, arr) => arr.indexOf(d) === i) // remove duplicates
+        .reverse(); // oldest first
+
+    let streak = 0;
+    let check = new Date();
+    check.setHours(0, 0, 0, 0);
+
+    for (let i = dates.length - 1; i >= 0; i--) {
+        const entryDate = new Date(dates[i]);
+        entryDate.setHours(0, 0, 0, 0);
+        if (entryDate.getTime() === check.getTime()) {
+            streak++;
+            check.setDate(check.getDate() - 1);
+        } else {
+            break;
+        }
+    }
+
+    document.getElementById('entryCount').textContent = 
+        `${allEntries.length} Entries · Avg Sleep: ${avgSleep}hrs · ${streak} Day Streak`;
+}
 
 function closeHistory() {
     document.getElementById('trainingHistory').style.display = 'none';
@@ -88,6 +119,7 @@ function closeHistory() {
 
 
 function getFlameColor(count) {
+    if (count <= 2)  return '#2b2b2b';   // dark gray
     if (count <= 5)  return '#8B0000';   // dark red
     if (count <= 10) return '#cc2200';   // deep red
     if (count <= 20) return '#ff4500';   // orange red
