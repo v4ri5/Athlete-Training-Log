@@ -2,7 +2,7 @@ document.getElementById('AthleteForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const entry = {
-        date: new Date().toLocaleDateString(),
+        date: document.getElementById('date').value,
         event: document.getElementById('athleteEvent').value,
         description: document.getElementById('Description').value,
         keyTakeaways: document.getElementById('keyTakeaways').value,
@@ -21,4 +21,9 @@ document.getElementById('AthleteForm').addEventListener('submit', function(e) {
 
     // calls closePopup() from the parent (main) page
     window.parent.closePopup();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').value = today;
 });

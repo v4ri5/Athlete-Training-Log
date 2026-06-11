@@ -14,9 +14,18 @@ Each field should be required
 </head>
 <body>
     <form id="AthleteForm">
-        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
         <label for="athleteEvent">Event:</label>
-        <input type="text" id="athleteEvent" name="athleteEvent" required>
+        <select id="athleteEvent" name="athleteEvent" required>
+            <option value="">-- Select --</option>
+            <option value="shot put">Shot Put</option>
+            <option value="discus">Discus</option>
+            <option value="hammer">Hammer</option>
+            <option value="weight">Weight</option>
+            <option value="javilin">Javilin</option>
+        </select>
         
         
         <label for="Description">Description:</label>
@@ -49,7 +58,7 @@ Each field should be required
 
         
         <label for="injuries">Injuries(list them):</label>
-        <input type="textarea" id="injuries" name="injuries" required>
+        <input type="textarea" id="injuries" name="injuries" >
 
         
         <input type="submit" value="Submit">
