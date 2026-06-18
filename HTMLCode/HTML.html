@@ -19,9 +19,12 @@
 
 
     <div class ="bottom">
-        <div class = "info_box"><h1 class="heading" style="font-size: 20px">Athlete info</h1>
-            <div class="info_body"><p>PR</p><p>DT:52.36</p><p>SP:15.36</p><p>HT:57.32</p><p>JT:0</p><p>WT:20.00</p></div></div>
-            <div class="video_box">
+        <div class="info_box" onclick="openPRs()">
+                <h1 class="heading" style="font-size: 20px">Personal Records</h1>
+                <p class="prInfoHint">tap to edit</p>
+                <div id="profilePRs"></div>
+                </div>            
+                <div class="video_box">
                 <button class = "video_button" id="VB" onclick="">
                     <img src="/Assets/Images/camera.jpg" alt="cam pic" class="cam_pic">
                 </button>
@@ -251,8 +254,6 @@
             <button class="CloseBut" id="closeBut" onclick="closePopup()">X</button>
         </div>
     </div>
-    <div class="TrainingHistory" id="trainingHistory" style="display: none;">
-        <div>
 
         </div>    
     </div>
@@ -260,7 +261,21 @@
 
 </div>
 
-
+        <!-- PR Manager Popup -->
+<div class="PRPopup" id="prPopup" style="display:none;">
+    <div class="PRPopUpContent">
+        <div class="PRPopUpHeader">
+            <h2>Personal Records</h2>
+            <button class="CloseBut" onclick="closePRs()">X</button>
+        </div>
+        <div class="prTabs">
+            <button class="prTab active" id="prTab_field" onclick="switchPRTab('field')">Field Events</button>
+            <button class="prTab" id="prTab_weightRoom" onclick="switchPRTab('weightRoom')">Weight Room</button>
+        </div>
+        <div class="prContent" id="prContent"></div>
+    </div>
+</div>
         <script src="/JavaScript Code/index.js" ></script>
+        <script src="/JavaScript Code/PRs.js"></script>
     </body>
 </html>
