@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/CSSCode/Css.css">
+        <link rel="stylesheet" href="/CSSCode/Css.css">
         <title>Athlete-Training-Log</title>
         
         <!-- Tabler icons for the suggestion card icons -->
@@ -22,6 +23,12 @@
 
 
     <div class ="bottom">
+        <div class = "info_box"><h1 class="heading" style="font-size: 20px">Athlete info</h1>
+            <div class="info_body"><p>PR</p><p>DT:52.36</p><p>SP:15.36</p><p>HT:57.32</p><p>JT:0</p><p>WT:20.00</p></div></div>
+
+
+            <div class="video_box">
+                <button class = "video_button" id="VB" onclick="openPopupvideo()">
         <div id="suggestion-panel"></div>
         <div class="info_box">
                 <h1 class="heading" style="font-size: 20px">Personal Records</h1>
@@ -258,6 +265,15 @@
             <button class="CloseBut" id="closeBut">X</button>
         </div>
     </div>
+    <div class="videoplayer" id="Video_Player" style="display: none">
+        <div class="videoPlayerPopup" id="videoPlayerPopup">
+            <iframe class="Iframe" src="videoPlayer.html"></iframe>
+            <button class="CloseBut" id="closeBut" onclick="closePopupvideo()">X</button>
+        </div>
+    </div>
+
+    <div class="TrainingHistory" id="trainingHistory" style="display: none;">
+        <div>
 </div>
 
         <!-- PR Manager Popup -->

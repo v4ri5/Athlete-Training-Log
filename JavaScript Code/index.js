@@ -5,12 +5,22 @@ function openPopup() {
     document.getElementById("athleteForm").style.display = "flex";
     renderSuggestion();
 }
+function openPopupvideo() {
+    document.getElementById("Video_Player").style.display = "flex";
+}
 
 function closePopup() {
     document.getElementById("athleteForm").style.display = "none";
-    
-    renderSuggestion(); // Refresh the suggestion panel after closing the form
+  renderSuggestion(); // Refresh the suggestion panel after closing the form
 }
+
+function closePopupvideo() {
+    document.getElementById("Video_Player").style.display = "none";
+}
+
+    
+    
+
 
 window.openPopup = openPopup;
 window.closePopup = closePopup;
