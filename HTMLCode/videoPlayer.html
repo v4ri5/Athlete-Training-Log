@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/CSSCode/videoPlayer.css">
+</head>
+<body>
+
+    <button class= "videoButton" id="chooseVideo">Choose Video</button>
+
+    <input
+            type="file"
+            id="videoInput"
+            accept="video/*"
+            style="display:none;"
+    >
+
+    <br><br>
+
+    <video class="Videoplayer" id="videoPlayer" width="640" controls>
+        Your browser does not support video.
+    </video>
+
+
+<script>
+    const button = document.getElementById("chooseVideo");
+    const input = document.getElementById("videoInput");
+    const player = document.getElementById("videoPlayer");
+
+    button.addEventListener("click", () => {
+        input.click();
+
+    });
+
+    input.addEventListener("change", () => {
+        const file = input.files[0];
+
+        if (file) {
+            const videoURL = URL.createObjectURL(file);
+            player.src = videoURL;
+            player.load();
+        }
+    });
+</script>
+
+</body>
+</html>
